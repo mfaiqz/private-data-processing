@@ -4,7 +4,7 @@ import numpy as np
 
 
 macro_elements = ["Fe2O3","Al2O3","SiO2","LOI"]
-all_elements = ['Ni', 'Co', 'Al2O3', 'CaO', 'Cr2O3', 'Fe2O3', 'K2O',
+all_elements = ['SAMPLE','Ni', 'Co', 'Al2O3', 'CaO', 'Cr2O3', 'Fe2O3', 'K2O',
                  'MgO', 'MnO', 'Na2O', 'P*', 'S*', 'SiO2', 'TiO2', 'LOI']
 
 def balancer(dataframe_input):
