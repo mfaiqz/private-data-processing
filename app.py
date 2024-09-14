@@ -60,7 +60,7 @@ def main():
             df_final = balancer(df.copy())
             st.write("BEFORE")
             st.dataframe(df, width=800, height=400)
-            print(oxide_sum(df))
+            # print(oxide_sum(df))
 
             st.write("AFTER")
             st.dataframe(df_final, width=800, height=400)
