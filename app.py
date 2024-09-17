@@ -7,7 +7,7 @@ macro_elements = ["Fe2O3","Al2O3","SiO2","LOI"]
 all_elements = ['SAMPLE','Ni', 'Co', 'Al2O3', 'CaO', 'Cr2O3', 'Fe2O3', 'K2O',
                  'MgO', 'MnO', 'Na2O', 'P*', 'S*', 'SiO2', 'TiO2', 'LOI']
 
-def balancer(dataframe_input):
+def balancerd(dataframe_input):
     df=dataframe_input
     df["Sum"]= oxide_sum(df)
     df["Diff"]= diff(df)
