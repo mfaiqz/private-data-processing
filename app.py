@@ -79,7 +79,7 @@ jawaban = "RASA BURUNG"
 
 
 if passwordnya.upper() == jawaban:
-    main()
+    mainE()
 else :
     pass
 
