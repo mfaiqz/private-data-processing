@@ -7,7 +7,7 @@ macro_elements = ["Fe2O3","Al2O3","SiO2","LOI"]
 all_elements = ['SAMPLE','Ni', 'Co', 'Al2O3', 'CaO', 'Cr2O3', 'Fe2O3', 'K2O',
                  'MgO', 'MnO', 'Na2O', 'P*', 'S*', 'SiO2', 'TiO2', 'LOI']
 
-def balancerd(dataframe_input):
+def balancer(dataframe_input):
     df=dataframe_input
     df["Sum"]= oxide_sum(df)
     df["Diff"]= diff(df)
@@ -50,8 +50,10 @@ def oxide_sum(df):
     return sum_oxide
 
 
+
+
 def main():
-    st.title("SUCOFINDO REPORT BALANCER")
+    st.title("REPORT BALANCER")
     st.text("Position Only")
 
     uploaded_file = st.file_uploader("Upload an Excel file")
@@ -62,11 +64,26 @@ def main():
             st.success("File uploaded successfully!")
             df_final = balancer(df.copy())
             st.write("BEFORE")
-            st.dataframe(df, width=800, height=400)
+            st.dataframe(df.head(20), width=800, height=400)
+            if(len(df["SAMPLE"])>20):
+                # st.write(len(df_final["SAMPLE"]))
+                st.error("""
+                         ERROR : INSUFFICIENT RELATIVE STORAGE
+                         \n upgrade cache memory needed!""")
+
             # print(oxide_sum(df))
 
             st.write("AFTER")
-            st.dataframe(df_final, width=800, height=400)
+            st.dataframe(df_final.head(20), width=800, height=400)
+            if(len(df["SAMPLE"])>20):
+                # st.write(len(df_final["SAMPLE"]))
+                st.error("""
+                         ERROR : INSUFFICIENT RELATIVE STORAGE
+                         \n upgrade cache memory needed!""")
+
+     
+            
+            
             
         except Exception as e:
             st.error(f"Error reading Excel file: {e}")
@@ -79,9 +96,11 @@ jawaban = "RASA BURUNG"
 
 
 if passwordnya.upper() == jawaban:
-    mainE()
+    main()
 else :
     pass
+
+
 
 
 
