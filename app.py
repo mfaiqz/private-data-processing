@@ -9,7 +9,7 @@ all_elements = ['SAMPLE','Ni', 'Co', 'Al2O3', 'CaO', 'Cr2O3', 'Fe2O3', 'K2O',
 final_elements = ['SAMPLE','Ni', 'Co', 'Al2O3', 'CaO', 'Cr2O3', 'Fe','Fe2O3', 'K2O',
                  'MgO', 'MnO', 'Na2O', 'P*', 'S*', 'SiO2', 'TiO2','Cr', 'LOI']
 
-def balancer(dataframe_input):
+def balanceer(dataframe_input):
     df=dataframe_input
     df["Sum"]= oxide_sum(df)
     df["Diff"]= diff(df)
